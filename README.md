@@ -1,2 +1,3 @@
-# gate
-customisable rule evaluation engine in ruby. conditional query strings evaluated on custom operators. todo.
+# Sinatra API boilerplate
+
+Ruby Sinatra Sequel in a modular design
