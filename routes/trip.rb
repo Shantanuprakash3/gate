@@ -4,25 +4,24 @@ require_relative '../controllers/init'
 module Sinatra
 	module MyApp
 		module Routes
-			module FruitRoutes
+			module TripRoutes
 				def self.registered(app)
-					app.get "/fruit/:id" do
-						request.body.rewind
-						@request_payload = JSON.parse request.body.read
-				  
-						
-					end
-					app.post "/fruit" do
+
+					app.post "/trip/book" do
 						request.body.rewind
 						request_payload = JSON.parse request.body.read
 						
-						fruitControllerObj = FruitController.new
-						fruitControllerObj.set_fruit(request_payload)
+						tripControllerObj = TripController.new
+						tripControllerObj.book_trip(request_payload)
 					end
-					app.put "/fruit/:id" do
-						#...
+					app.delete "/trip/end/:id" do
+						request.body.rewind
+						request_payload = JSON.parse request.body.read
+						
+						tripControllerObj = TripController.new
+						tripControllerObj.end_trip(request_payload)
 					end
-					app.delete "/fruit/:id" do
+					app.delete "/rider/:id" do
 						#...
 					end
 				end

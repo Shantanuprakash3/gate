@@ -1,2 +1,4 @@
 require_relative './db'
-require_relative './fruit'
+require_relative './rider'
+require_relative './cab'
+require_relative './trip'
