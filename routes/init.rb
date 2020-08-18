@@ -1,3 +1,1 @@
-require_relative './cab'
-require_relative './rider'
-require_relative './trip'
+require_relative './story'

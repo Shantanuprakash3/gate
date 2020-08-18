@@ -1,0 +1,2 @@
+SENTENCE = 10  
+PARAGRAPH = 20 

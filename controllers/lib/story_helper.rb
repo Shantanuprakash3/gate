@@ -1,0 +1,2 @@
+class StoryHelper
+end
