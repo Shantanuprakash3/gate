@@ -1,5 +1,5 @@
 --- 
   limits:
     sentence: 15 #words
-    paragraph: 15 #sentences
+    paragraph: 10 #sentences
     story: 7 #paragraphs

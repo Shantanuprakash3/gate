@@ -24,7 +24,7 @@ class BlobHelper
     end
 
     def get_all_blobs
-        Storyblobs.where(:story_id => @story_id).all.values
+        story_blobs = Storyblobs.where(:story_id => @story_id).all
     end
 
     def fits_last_incomplete_blob? word

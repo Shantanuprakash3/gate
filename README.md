@@ -1,3 +1,15 @@
-# Sinatra API boilerplate
+# VerloopBackend Engineering Challenge - Collaborative Story
 
-Ruby Sinatra Sequel in a modular design
+# Setup Steps
+
+ruby > 2.4
+
+gem install sinatra
+gem install yaml
+gem install sequel
+
+## 
+# 
+
+rackup
+
