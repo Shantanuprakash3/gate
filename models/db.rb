@@ -1,22 +1,39 @@
 require 'sequel'
 DB = Sequel.sqlite('/tmp/development.db')
 
-unless DB.table_exists?(:stories)
-  DB.create_table :stories do
-    primary_key :story_id
-    String :title, null: false, index: true
-    Integer :word_count, default: 1
-    DateTime :created_at, default: Sequel::CURRENT_TIMESTAMP, :index=>true
-    DateTime :updated_at, default: Sequel::CURRENT_TIMESTAMP, :index=>true
-  
-    index [:title, :created_at, :updated_at]
+unless DB.table_exists?(:cabs)
+  DB.create_table :cabs do
+    primary_key :cab_id
+
+    column :driver_name, String
+    column :availability, String
+    column :latitude, Float
+    column :longitude, Float
+    column :created_at, DateTime
+    column :updated_at, DateTime
   end
 end
 
-unless DB.table_exists?(:storyblobs)
-  DB.create_table :storyblobs do
-    primary_key :blob_id
-    foreign_key :story_id, :stories    
-    String :story_blob, null: false
+unless DB.table_exists?(:riders)
+  DB.create_table :riders do
+    primary_key :rider_id
+
+    column :rider_name, String
+    column :latitude, Float
+    column :longitude, Float
+    column :created_at, DateTime
+    column :updated_at, DateTime    
+  end
+end
+
+unless DB.table_exists?(:trips)
+  DB.create_table :trips do
+    primary_key :trip_id
+
+    column :cab_id, String
+    column :rider_id, String
+    column :trip_status, String
+    column :created_at, DateTime
+    column :updated_at, DateTime
   end
 end

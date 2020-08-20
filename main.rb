@@ -16,5 +16,8 @@ class MyApp < Sinatra::Base
   #helpers Sinatra::MyApp::Authentication
   helpers Sinatra::MyApp::ResponseFormat
   #helpers Sinatra::MyApp::AppError
-  register Sinatra::MyApp::Routes::StorysRoutes
+  
+  register Sinatra::MyApp::Routes::RiderRoutes
+  register Sinatra::MyApp::Routes::CabRoutes
+  register Sinatra::MyApp::Routes::TripRoutes
 end

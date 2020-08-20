@@ -1,7 +1,7 @@
 require 'multi_json'
 
 module Sinatra
-    module MyApp
+    module MySplit
         module Helpers
             module Authentication
                 def authenticate!
