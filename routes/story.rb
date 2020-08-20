@@ -19,12 +19,12 @@ module Sinatra
 						storyControllerObj.add_word(request_payload["word"])
 					end
 					app.get "/stories" do
+
 						storyControllerObj = StoryController.new
 						storyControllerObj.get_all_stories(params)
 					end
 					app.get "/stories/:id" do
-						storyControllerObj = StoryController.new
-						storyControllerObj.get_story(params[:id])
+						#...
 					end
 				end
 			end

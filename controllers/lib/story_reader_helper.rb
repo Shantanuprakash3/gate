@@ -41,24 +41,9 @@ class StoryReaderHelper < StoryHelper
         response.to_json
     end
 
-    def get_stories_by_id story_id
-        response = {}
-    
-        story = Stories.where(:story_id => story_id).first.values
+    def get_story_by_id story_id
         blobObj = BlobHelper.new story_id
         all_blobs = blobObj.get_all_blobs
-        
-        response[:id] = story[:story_id]
-        response[:title] = story[:title]
-        response[:created_at] = story[:created_at]
-        response[:updated_at] = story[:updated_at]
-        response[:paragraphs] = []
-
-        all_blobs.each do |blob|
-            temp = blob.values
-            response[:paragraphs] << temp[:story_blob].split(",").join(" ")
-        end
-
-        response.to_json
+   
     end
 end
